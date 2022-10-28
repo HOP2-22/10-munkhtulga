@@ -7,6 +7,7 @@ import LogIn from "./pages/Login"
 import Products from "./pages/Products"
 import Services from "./pages/Services"
 import MyButton from "./components/Suiii"
+import timer from "./components/timer"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/services" element={<Services/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/MyButton" element={<MyButton/>}/>
+      <Route path="/timer" element={<timer/>}/>
       </Routes>
       </BrowserRouter></div>
   );
