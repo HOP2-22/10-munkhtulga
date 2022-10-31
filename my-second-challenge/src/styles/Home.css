@@ -1,3 +1,7 @@
+.con{
+    width:100%;
+    height:100vh;
+}
 .container {
     width:100%;
     height:101vh;
@@ -19,4 +23,76 @@
 }
 .buttonone{
 color:gray;
+}
+.page1{
+    width:100%;
+    height:100vh;
+
+    
+}
+.page2{
+    width:100%;
+    height:100vh;
+
+}
+.page3{
+    width:100%;
+    height:100vh;
+
+}
+.page4{
+    width:100%;
+    height:100vh;
+
+}
+.page5{
+    width:100%;
+    height:100vh;
+
+}
+.text1{
+font-size:80px;
+color:white;
+width:800px;
+margin-left:180px;
+padding-top:300px;
+}
+.text2{
+font-size:30px;
+color:white;
+width:600px;
+margin-left:180px;
+padding-top: 40px;
+}
+.text3{
+    
+}
+.text4{
+    
+}
+.text5{
+    
+}
+.text6{
+    
+}
+.text7{
+    
+}
+.input1{
+ margin-left:180px;
+ width:400px;
+ height:50px;
+ margin-top:100px;
+ border-radius: 5px;
+}
+.button1{
+width:150px;
+height:58px;
+position: relative;
+top:0px;
+left:20px;
+background-color:aqua;
+color:white;
+border-radius: 5px;;
 }
