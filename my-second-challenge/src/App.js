@@ -12,19 +12,17 @@ import Layout from "./components/layout/Layout"
 
 function App() {
   return (
-   
     <BrowserRouter>
-  
-    <Routes>
-     
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/login" element={<LogIn/>}/>
-      <Route path="/services" element={<Services/>}/>
-      <Route path="/products" element=  {<Products/>}/>
-      <Route path="/" element={<Home/>}/>
-      </Routes>
-      
-      </BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
