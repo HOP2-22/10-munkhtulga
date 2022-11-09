@@ -11,7 +11,7 @@ export default function ActionAreaCard(props) {
   const { title, description, avatar, name, date } = props;
   return (
     <Box sx={{marginTop:5}}>
-    <Card sx={{ maxWidth: 345 , borderRadius:6,}}>
+    <Card sx={{ maxWidth: 345 , borderRadius:6, height:400}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -23,17 +23,18 @@ export default function ActionAreaCard(props) {
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {date}
-          </Typography>
-          <Typography>
-            {name}
-          </Typography>
           <Typography>
             {description}
           </Typography>
-          <Box>
+          <Box sx={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
             <Avatar alt="Remy Sharp" src={avatar} />
+            <Typography sx={{fontFamily:"Mulish", fontWeight:"600", color:"#6D7D8B", fontSize:12}}>
+            {name}
+          </Typography>
+          <Typography>|</Typography>
+          <Typography variant="body2" color="text.secondary" sx={{color:"#6D7D8B", fontFamily:"Mulish", fontWeight:"600", fontSize:12,}}>
+            {date}
+          </Typography>
           </Box>
         </CardContent>
       </CardActionArea>
