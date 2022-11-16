@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home"
 import Contact from "./pages/Contact"
 import LogIn from "./pages/Login"
-import Products from "./pages/Products"
 import Services from "./pages/Services"
+import BlogPosts from "./BlogPost/BlogPost"
+import {CardInfo} from "./BlogPost/CardInfo"
 import Layout from "./components/layout/Layout"
 
 
@@ -18,8 +19,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/products" element={<Products />} />
           <Route path="/" element={<Home />} />
+          <Route path="/blogposts" element={<BlogPosts/>}/>
+          <Route path="/:id" element={<CardInfo/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>

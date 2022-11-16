@@ -21,7 +21,7 @@ export const Header = () => {
       <div className="team" style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>team
       <div className="bluebox" style={{ backgroundColor: offset === 0 ? "transparent" : "#0BBEF2" }}></div></div>
       <div className="linkheaders">
-      <Link  className="linkheader" to="/products" style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>Products</Link>
+      <Link  className="linkheader" to="/blogposts" style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>Blog Posts</Link>
       <Link className="linkheader"  to="/services" style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>Services</Link>
       <Link  className="linkheader" to="/contact" style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>Contacts</Link>
       <Link  className="linkheader" to="/login"  style={{ color: offset === 0 ? "transparent" : "#0BBEF2" }}>Login</Link>
