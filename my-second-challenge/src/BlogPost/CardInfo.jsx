@@ -31,15 +31,16 @@ export function CardInfo(props) {
         <div>
             <Header />
             <Container SX={{ display:"flex", justifyContent:"center"}}>
-                <Box sx={{justifyContent:"center"}}>
+                <Box sx={{display:"flex",justifyContent:"center"}}>
                 <CardMedia sx={{ display: "flex", alignContent: "flex-start", maxWidth: 800, justifyContent:"center" }}
                     component="img"
-                    Height="600"
+                    height="600"
                     width="800"
                     image={data?.image}
                     alt="green iguana"
                 ></CardMedia>
-                {data?.tags+""}</Box>
+                <Typography sx={{display:"flex", justifyContent:"center"}}>{data?.tags+""}</Typography></Box>
+                
             </Container>
         </div>
     )
