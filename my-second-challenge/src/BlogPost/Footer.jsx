@@ -6,16 +6,30 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 export const Footer=()=>{
  return(
-    <Box sx={{ display:"flex", height: 400, backgroundColor: "#252B3B" , width:"100%"}}>
+    <Box sx={{ display:"flex", height: 250, backgroundColor: "#252B3B" , width:"100%"}}>
      <Box>
-         <Typography>team.</Typography>
+         <Grid container spacing={4} >
+           <Grid item xs={12} >
+           <Typography>team.</Typography>
          <Typography><InstagramIcon />Instagram</Typography>
          <Typography><FacebookIcon/>Facebook</Typography>
          <Typography><TwitterIcon/>Twitter</Typography>
          <Typography><InstagramIcon/>Instagram</Typography>
          <Typography><FacebookIcon/>Facebook</Typography>
          <Typography><TwitterIcon/>Twitter</Typography>
-     </Box>
+           </Grid>
+           <Grid item xs={12}>
+               <Typography>Use Cases</Typography>
+               <Typography>UI Design</Typography>
+            <Typography>UX Design</Typography>
+            <Typography>Prototyping</Typography>
+            <Typography>UI Design</Typography>
+            <Typography>UX Design            </Typography>
+          <Typography>Prototyping</Typography>
+           </Grid>
+         </Grid>
+    
+     </Box> 
     </Box>
     
  )
