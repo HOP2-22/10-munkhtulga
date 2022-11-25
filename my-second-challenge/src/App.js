@@ -14,20 +14,20 @@ import Gif from "./components/Gif"
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <Layout>
-    //     <Routes>
-    //       <Route path="/contact" element={<Contact />} />
-    //       <Route path="/login" element={<LogIn />} />
-    //       <Route path="/services" element={<Services />} />
-    //       <Route path="/" element={<Home />} />
-    //       <Route path="/blogposts" element={<BlogPosts/>}/>
-    //       <Route path="/:id" element={<CardInfo/>}/>
-    //       <Route path="/gif" element={<Gif/>}/>
-    //     </Routes>
-    //   </Layout>
-    // </BrowserRouter>
-    <Gif />
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/blogposts" element={<BlogPosts/>}/>
+          <Route path="/:id" element={<CardInfo/>}/>
+          <Route path="/gif" element={<Gif/>}/>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+ 
   );
 }
 
