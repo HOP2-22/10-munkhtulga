@@ -1,7 +1,7 @@
 .app {
     text-align: center;
-    background-color: gainsboro;
-    min-height: 100vh;
+    background-color: #b40001;
+   height:10vh;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -3,7 +3,7 @@ import "../styles/sui.css"
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
-  const [minuts, setMinutes]=useState(0);
+  const [minutes, setMinutes]=useState(0);
   const [hours, sethours]=useState(0)
   const [isActive, setIsActive] = useState(false);
 
@@ -28,12 +28,12 @@ const Timer = () => {
       setMinutes((minuts)=> minuts+1)
       setSeconds(0)
    }
-   if(minuts===60){
+   if(minutes===60){
     sethours((hours)=> hours+1)
     setMinutes(0)
  }
       
-    } else if (!isActive && seconds !== 0,!isActive && minuts !== 0,!isActive && hours !== 0) {
+    } else if (!isActive && seconds !== 0,!isActive && minutes !== 0,!isActive && hours !== 0) {
       clearInterval(interval);
     }
   
@@ -43,7 +43,7 @@ const Timer = () => {
   return (
     <div className="app">
       <div className="seconds">{seconds}s</div>
-      <div className="minutes">{minuts}m</div>
+      <div className="minutes">{minutes}m</div>
       <div className="hours">{hours}h</div>
       <div className="row">
         <button
