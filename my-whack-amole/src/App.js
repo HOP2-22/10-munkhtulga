@@ -76,7 +76,7 @@ const MyData = ({ index, Data, isActive, setMove,setScore }) => {
     setTimeout(() => {
       newArr[num] = false;
       setMove(newArr);
-    }, 200)
+    }, 2000)
   }
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const MyData = ({ index, Data, isActive, setMove,setScore }) => {
           height: "129px",
           position: "absolute",
           transition: "0.5s",
-          transform: Data ? "translateY(30px)" : "translateY(120px)",
+          transform: Data ? "translateY(30px)" : "translateY(145px)",
           position: "absolute",
         }}
         onClick={() => setScore((prev) => prev + 1)}
@@ -134,7 +134,7 @@ function App() {
     <Box sx={{ backgroundColor: "#B40000", height: "100vh" }}>
 
       <Container maxWidth="md">
-        <Typography variant="body1" color="initial">{score}</Typography>
+   
         <Box>
           <Box
             sx={{
@@ -159,7 +159,7 @@ function App() {
               );
             })}
           </Box>
-
+          <Typography variant="body1"  color="initial"sx={{fontSize:"50px" ,display:"flex", justifyContent:"center"}}>Score is {score}</Typography>
         </Box>
       </Container>
     </Box>
