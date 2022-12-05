@@ -1,4 +1,4 @@
-import { Box, Container, useFormControl, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./styles/sui.css"
@@ -10,7 +10,6 @@ const Timer = ({ isActive, setIsActive }) => {
 
   function toggle() {
     setIsActive(!isActive);
-
   }
 
   function reset() {
@@ -18,7 +17,7 @@ const Timer = ({ isActive, setIsActive }) => {
     setMinutes(0)
     sethours(0)
     setIsActive(false);
-  }
+    }
 
   useEffect(() => {
     let interval = null;
@@ -76,7 +75,7 @@ const MyData = ({ index, Data, isActive, setMove,setScore }) => {
     setTimeout(() => {
       newArr[num] = false;
       setMove(newArr);
-    }, 2000)
+    }, 3500)
   }
 
   useEffect(() => {
@@ -84,12 +83,17 @@ const MyData = ({ index, Data, isActive, setMove,setScore }) => {
     if (isActive) {
       interval = setInterval(() => {
         translate();
-      }, 700)
+      }, 1000)
     }
 
     return () => clearInterval(interval);
   }, [isActive]);
-  console.log(Data)
+
+
+console.log(isActive)
+
+
+
   return (
 
     <div
@@ -111,7 +115,7 @@ const MyData = ({ index, Data, isActive, setMove,setScore }) => {
           position: "absolute",
           transition: "0.5s",
           transform: Data ? "translateY(30px)" : "translateY(145px)",
-          position: "absolute",
+         
         }}
         onClick={() => setScore((prev) => prev + 1)}
       />
@@ -129,6 +133,9 @@ function App() {
   const [move, setMove] = useState(new Array(15).fill(false))
   const [isActive, setIsActive] = useState(false);
   const [score, setScore] = useState(0);
+  useEffect(()=> {
+  
+  },[score])
 
   return (
     <Box sx={{ backgroundColor: "#B40000", height: "100vh" }}>
