@@ -36,6 +36,7 @@ const Timer = () => {
     } else if (!isActive && seconds !== 0,!isActive && minutes !== 0,!isActive && hours !== 0) {
       clearInterval(interval);
     }
+    
   
     return () => clearInterval(interval);
   }, [isActive, seconds]);

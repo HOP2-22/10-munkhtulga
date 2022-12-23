@@ -39,7 +39,7 @@ export function CardInfo(props) {
                     image={data?.image}
                     alt="green iguana"
                 ></CardMedia>
-                <Typography sx={{display:"flex", justifyContent:"center",}}>{data?.tags+""}</Typography></Box>
+                <Typography sx={{display:"flex", justifyContent:"center",}}>{data?.tags+""}</Typography></Box>  
                 
             </Container>
         </div>

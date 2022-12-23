@@ -4,12 +4,13 @@ import {Link} from "react-router-dom"
 
 
 
+
 export const Header = () => {
     return <div><AppBar position="fixed" sx={{ height:40 , backgroundColor:"white", boxShadow:"none"}}>
         <Container sx={{ display: 'flex', justifyContent: 'space-between' , alignItems:'center'}}>
             <Typography sx={{fontSize:30, color:"#1E2742", fontFamily: "Mulish", fontWeight: 800}}>team.</Typography>
             <Box sx={{ display: 'flex', gap: 8 }}>
-                <Typography sx={{ color:"#6D7D8B"}}>Products</Typography>
+                <Link to=""><Typography sx={{ color:"#6D7D8B"}}>Products</Typography></Link>
                 <Typography sx={{color:"#6D7D8B"}}>Products</Typography>
                 <Typography sx={{color:"#6D7D8B"}}>Products</Typography>
                 <Typography sx={{color:"#6D7D8B"}}>Products</Typography>
