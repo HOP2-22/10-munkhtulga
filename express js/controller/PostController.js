@@ -1,4 +1,5 @@
 const Post = require("../models/Postman");
+const User = require("../models/User");
 
 exports.getPosts = async (request, response) => {
   try {
@@ -48,3 +49,18 @@ exports.deletePosts = async (request, response) => {
       .send({ message: "Failed to delete" + "" + error.message });
   }
 };
+exports.getPostsbyUserId = async (request,response)=>{
+    const _id=request.params.id
+    
+    try{
+     const posts=await Post.find()
+     const newData=posts.filter((el)=>{
+        return el.owner === _id
+     })
+     response.send(newData)
+    }catch(error){
+        response
+        .status(400)
+        .send({message:"Failed to find"+""+ error.message})
+    }
+}
