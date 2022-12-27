@@ -7,6 +7,7 @@ const {
   updatePosts,
   deletePosts,
   getPostsbyUserId,
+  // getListByTag,
 } = require("../controller/PostController");
 
 router
@@ -15,7 +16,7 @@ router
   .post("/posts/create", createPosts)
   .put("/posts/:id", updatePosts)
   .delete("/posts/:id", deletePosts)
-  .get("/users/:id/posts", getPostsbyUserId);
-  
+  .get("/users/:id/posts", getPostsbyUserId)
+  // .get("/tag/:id/post", getListByTag);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const Post = require("../models/Postman");
 const User = require("../models/User");
+const Comment=require("../models/Comment")
 
 exports.getPosts = async (request, response) => {
   try {
@@ -64,3 +65,10 @@ exports.getPostsbyUserId = async (request,response)=>{
         .send({message:"Failed to find"+""+ error.message})
     }
 }
+// exports.getListByTag = async (req, res) => {
+//     const tag = req.params.tag;
+//     const user = await Post.find({
+//       tags: [tag],
+//     });
+//     res.send(user);
+//   };
