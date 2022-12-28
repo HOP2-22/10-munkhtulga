@@ -44,15 +44,11 @@ exports.getCommentListByPost = async(request,response)=>{
   response.status(400).send({message: "failed to tes"+ error.message})
     }
 }
-exports.getCommentListByUser = async(request,response)=>{
-    const _id=request.params.id
-    try{
-    const comment = await Comment.find()
-    const newData=comment.filter((el)=>{
-        return el.owner=_id
-    })
-    response.send(newData)
-    }catch(error){
-    response.status(400).send({message:error.message})
-    }
-}
+exports.getCommentListByUser = async (req, res) => {
+  const _id = req.params.id;
+  const user = await Comment.find();
+  const neww = user.filter((el) => {
+    return el.owner === _id;
+  });
+  res.send(neww);
+};

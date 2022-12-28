@@ -3,7 +3,7 @@ const router= express.Router()
 const{
     getCommentList,
     getCommentListByPost,
-    // getCommentListByUser,
+    getCommentListByUser,
     createComments,
     deleteComment,
 } = require("../controller/CommentController");
@@ -11,7 +11,7 @@ const{
 router
 .get("/comment",getCommentList)
 .get("/posts/:id/comment", getCommentListByPost)
-// .get("/user/:id/comment", getCommentListByUser)
+.get("/users/:id/comment", getCommentListByUser)
 .post("/comment/create", createComments)
 .delete("/comment/:id", deleteComment)
 
