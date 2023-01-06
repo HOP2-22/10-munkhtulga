@@ -7,6 +7,8 @@ const URI = "mongodb+srv://Deserved2k:tulga2008@cluster0.4kpurtz.mongodb.net/blo
 const PostRouter= require("./router/PostRouter")
 const userRouter= require("./router/userRouter")
 const CommentRouter= require("./router/CommentRouter")
+const cors=require("cors")
+
 const port = 8000;
 const app = express();
 mongoose.connect(URI);
@@ -14,7 +16,7 @@ mongoose.connect(URI);
 mongoose.connection.once("open", () => {
   console.log('mongodb connected')
 })
-
+app.use(cors())
 app.use(express.json());
 app.use(userRouter,PostRouter,CommentRouter)
 app.listen(port, () => {

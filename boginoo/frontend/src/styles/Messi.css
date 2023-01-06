@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* Home stuff starts here */
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.Home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+.header {
+  padding-top: 3vh;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  position: absolute;
+  right: 2vw;
+  gap: 2vw;
+}
+.howwork {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: #02b589;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: justify;
+}
+.login {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: #02b589;
+  font-size: 20px;
+  line-height: 25px;
+}
+.buttonlogin {
+  width: 200px;
+  height: 50px;
+  border-radius: 120px;
+  background-color: #02b589;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+/* Home stuff ends here (with some of Header stuff)*/
+
+/* Logo stuff starts here */
+.boginooName {
+  font-family: "Lobster", cursive;
+  font-weight: 700;
+  color: #02b589;
+  font-size: 56px;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 35vh;
+}
+.logoimages {
+  display: flex;
+  justify-content: center;
+}
+/* Logo Stuff ends here */
+
+/* InputLink stuff starts here */
+.input {
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  position: absolute;
+  top: 50vh;
+}
+.linkinput {
+  width: 580px;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
+  background-color: white;
+  border: 1px solid #f0f0f0;
+}
+.linkinput::placeholder {
+  position: relative;
+  left: 10px;
+  color: black;
+  opacity: 0.2;
+}
+.linkinput:focus {
+  outline: none;
+}
+.buttoninput {
+  width: 200px;
+  line-height: 23px;
+  height: 44px;
+  font-style: normal;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #02b589;
+  color: white;
+  border: none;
+  border-radius: 100px;
+}
+.buttoninput:focus {
+  outline: none;
+}
+
+input {
+  box-sizing: border-box;
+  padding-left: 25px;
+}
+/* InputLink stuff ends here */
+
+/* Footer stuff starts here */
+.footer {
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 92vh;
+  padding-bottom: 2vh;
+}
+.footertextone {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  width: 225px;
+  height: 20px;
+  color: black;
+  text-align: center;
+  padding-bottom: 0.5vh;
+}
+.footertexttwo {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  width: 130px;
+  height: 18px;
+  color: black;
+  opacity: 0.2;
+  text-align: center;
+}
+
+/* Footer stuff ends here */
+
+/* HeaderWithName stuff starts here */
+.headerwithname {
+  padding-top: 3vh;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 2vw;
+  position: absolute;
+  right: 2vw;
+}
+.namehere {
+  width: 200px;
+  height: 50px;
+  border-radius: 120px;
+  background-color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: black;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+/* HeaderWithName stuff ends here */
+
+/* BeforeAfter stuff starts here */
