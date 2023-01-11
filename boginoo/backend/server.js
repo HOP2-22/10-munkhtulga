@@ -1,10 +1,10 @@
 const express = require("express");
 const connect = require("./database");
-const authRouter = require("./routes/authorize");
+const router = require("./routes/authorize");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 
-const PORT = process.send.PORT || 3000;
+const PORT = process.send.PORT || 6900;
 
 const app = express();
 app.use(cors());
@@ -15,7 +15,7 @@ mongoose.connection.once("open", () => {
 
 connect();
 app.use(express.json());
-app.use("/auth", authRouter);
+app.use("/auth", router);
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

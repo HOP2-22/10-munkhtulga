@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const url = process.env.MONGODB_URL || "";
+const url = process.env.MONGODB_URL || "6900";
 
 const connect = async () => {
   try {
