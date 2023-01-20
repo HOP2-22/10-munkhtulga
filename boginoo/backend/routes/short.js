@@ -3,12 +3,13 @@ const express = require("express");
 const {
   //     getShortById,
   //   getShortsByUser,
-  //   createShort,
+  createShort,
   //   updateShort,
   //   deleteShort,
   getShorts,
 } = require("../controller/generator");
 
-const userRouter = express.Router();
+const linkRouter = express.Router();
 
-userRouter.get("/allShorts", getShorts);
+linkRouter.get("/allShorts", getShorts);
+linkRouter.post("/", createShort);
