@@ -1,6 +1,7 @@
 const express = require("express");
 const connect = require("./database");
 const privateRouter = require("./routes/private");
+const urlRouter = require("./routes/urlRouter");
 const router = require("./routes/authorize");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
@@ -16,6 +17,7 @@ mongoose.connection.once("open", () => {
 
 connect();
 app.use(express.json());
+app.use("/url", urlRouter);
 app.use("/auth", router);
 app.use("/private", privateRouter);
 app.listen(PORT, () => {
