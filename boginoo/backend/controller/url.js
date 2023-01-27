@@ -23,7 +23,7 @@ exports.createUrl = async (req, res) => {
     const newUrl = await Url.create({
       orignal: orignal,
       short: code,
-      owner: req.body.user ? req.body.user : "owner",
+      owner: req.body.user ? req.body.user : "jdgh",
     });
     res.status(201).json(newUrl);
   } catch (err) {

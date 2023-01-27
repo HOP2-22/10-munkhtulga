@@ -6,6 +6,7 @@ import HomeLoggedin from "./components/HomeLoggedin";
 import History from "./assets/Headeronlytext";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/test" element={<History />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </BrowserRouter>
   );
