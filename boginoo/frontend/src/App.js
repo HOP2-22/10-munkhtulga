@@ -3,10 +3,10 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import HomeLoggedin from "./components/HomeLoggedin";
-import History from "./assets/Headeronlytext";
+import History from "./components/Hometwo";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
+import ShortLink from "./components/ShortenedUrl";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/test" element={<History />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/short" element={<ShortLink />} />
       </Routes>
     </BrowserRouter>
   );

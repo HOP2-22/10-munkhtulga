@@ -61,10 +61,10 @@
   justify-content: center;
 }
 .logo {
-  width: 100vw;
-  height: 5vh;
+  width: 100%vw;
   display: flex;
   flex-direction: column;
+
   position: absolute;
   top: 35vh;
 }

@@ -34,7 +34,7 @@ export const Login = () => {
         color="neutral"
         onChange={handleChangePassword}
       ></input>
-      <button onClick={handleLogin}></button>
+      <button onClick={handleLogin}>Log in</button>
     </div>
   );
 };

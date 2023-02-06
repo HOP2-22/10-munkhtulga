@@ -1,7 +1,16 @@
 const express = require("express");
-const router = express.Router();
-const { createUrl, getUrl } = require("../controller/url");
+const {
+  createLink,
+  getDatas,
+  getData,
+  getHistory,
+} = require("../controller/URL");
 
-router.post("/create", createUrl).get("/:id", getUrl);
+const boginoo = express.Router();
 
-module.exports = router;
+boginoo.post("/create", createLink);
+boginoo.get("/datas", getDatas);
+boginoo.post("/history", getHistory);
+boginoo.post("/data", getData);
+
+module.exports = boginoo;

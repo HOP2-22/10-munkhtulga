@@ -30,7 +30,7 @@ export const SignUp = () => {
     <div>
       <input onChange={handleChangeUser}></input>
       <input type="password" onChange={handleChangePassword}></input>
-      <button onClick={handleSignUp}></button>
+      <button onClick={handleSignUp}>Sign Up</button>
     </div>
   );
 };

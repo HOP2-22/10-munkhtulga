@@ -1,13 +1,10 @@
-import React from "react";
-import "../styles/Messi.css";
-import Footer from "../assets/Footer";
-import Header from "../assets/Header";
-import InputLink from "../assets/InputLink";
-import Logo from "../assets/Logo";
-import { useState, useContext } from "react";
-import axios from "axios";
 import { AuthContext } from "../context/authcontext";
-export const ShortLink = () => {
+
+import { useState, useContext } from "react";
+import Header from "../assets/Header";
+import axios from "axios";
+
+const Home = () => {
   const { currentUser } = useContext(AuthContext);
   const [shortenedLink, setShortenedLink] = useState("");
   const [URL, setURL] = useState();
@@ -38,14 +35,29 @@ export const ShortLink = () => {
     } catch (e) {
       console.log(e);
     }
-    return (
-      <div className="Home">
-        <Header />
-        <Logo />
-        <InputLink />
-        <Footer />
-      </div>
-    );
   };
+
+  return (
+    <div>
+      <Header />
+      <img className="logo" alt="logo" src="/img/Group.img" />
+      <div className="inputContainer">
+        <input
+          className="inputText"
+          placeholder="https://www.web-huudas.mn/"
+          onChange={handleInput}
+        ></input>
+        <button
+          className="shortenButton"
+          onClick={() => {
+            fetchData();
+          }}
+        >
+          <p className="shortenButtonText">Богиносгох</p>
+        </button>
+        <div>{shortenedLink}</div>
+      </div>
+    </div>
+  );
 };
-export default ShortLink;
+export default Home;

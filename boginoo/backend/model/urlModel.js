@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 
-const Schema = new mongoose.Schema({
-  originalLink: String,
-  shortLink: String,
-  owner: String,
+const Schema = mongoose.Schema;
+const URLSchema = new Schema({
+  long: { type: String },
+  short: { type: String },
+  user: { type: String },
 });
 
-const Url = mongoose.model("url", Schema);
-module.exports = Url;
+const Link = mongoose.model("URL", URLSchema);
+
+module.exports = Link;

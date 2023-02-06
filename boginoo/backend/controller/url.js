@@ -1,49 +1,63 @@
-const Url = require("../model/urlModel");
+const Link = require("../model/urlModel");
 
-function makeid(length) {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
+const makeid = (length) => {
+  let result = "";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  const charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-}
+};
 
-exports.createUrl = async (req, res) => {
-  const { orignal } = req.body;
-  if (!orignal) {
-    res.status(400).json({
-      message: "Please provide the original url",
-    });
+exports.createLink = async (request, response) => {
+  const { long, user } = request.body;
+
+  if (!long || !user) {
+    response.status(400).json({ message: "Invalid request" });
+    return;
   }
+
   try {
-    const code = makeid(6);
-    const newUrl = await Url.create({
-      orignal: orignal,
-      short: code,
-      owner: req.body.user ? req.body.user : "jdgh",
+    const url = await Link.create({
+      long,
+      short: makeid(5),
+      user,
     });
-    res.status(201).json(newUrl);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+
+    response.status(200).json({ data: url });
+  } catch (error) {
+    response.send({ message: error.message });
   }
 };
-exports.getUrl = async (req, res) => {
-  if (!req.params.id) {
-    res.status(400).json({
-      message: "Please provide the id",
-    });
+
+exports.getDatas = async (request, response) => {
+  try {
+    const data = await Link.find();
+    response.status(200).send(data);
+  } catch (error) {
+    response.status(400).send({ message: error.message });
+  }
+};
+exports.getHistory = async (request, response) => {
+  const user = request?.body?.user;
+  console.log(request.body);
+  if (!user) {
+    return response.status(400).send({ message: "Invalid user" });
   }
   try {
-    const url = await Url.findOne({
-      short: req.params.id,
+    const data = await Link.find({
+      user: user,
     });
-    res.status(200).json(url);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    response.status(200).send(data);
+  } catch (error) {
+    response.status(400).send({ message: error.message });
   }
+};
+exports.getData = async (request, response) => {
+  const short = request.body.short;
+  try {
+    const data = await Link.findOne({ short });
+    response.send(data);
+  } catch (error) {}
 };
