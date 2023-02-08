@@ -6,6 +6,7 @@ export const SignUp = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [password, setPassword] = useState(null);
+
   const handleChangeUser = (event) => {
     setUser(event.target.value);
     console.log(user);
@@ -21,13 +22,13 @@ export const SignUp = () => {
       });
       console.log(response);
       setUser(response.data.email);
-      navigate("/loggedin");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
   };
   return (
-    <div>
+    <div style={{ paddingTop: 200 }}>
       <input onChange={handleChangeUser}></input>
       <input type="password" onChange={handleChangePassword}></input>
       <button onClick={handleSignUp}>Sign Up</button>

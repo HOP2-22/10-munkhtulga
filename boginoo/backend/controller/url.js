@@ -54,6 +54,7 @@ exports.getHistory = async (request, response) => {
     response.status(400).send({ message: error.message });
   }
 };
+
 exports.getData = async (request, response) => {
   const short = request.body.short;
   try {

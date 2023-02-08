@@ -1,39 +1,42 @@
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/authcontext";
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const { setCurrentUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
   const [password, setPassword] = useState(null);
-  const handleChangeUser = (event) => {
-    setUser(event.target.value);
-    console.log(user);
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
   };
+
   const handleChangePassword = (event) => {
     setPassword(event.target.value);
   };
-  const handleLogin = async (req, res) => {
+
+  const handleLogin = async () => {
     try {
       const response = await axios.post("http://localhost:6900/auth/login", {
-        email: user,
-        password: password,
+        email,
+        password,
       });
-      console.log(response);
-      setUser(response.data.email);
-      navigate("/loggedin");
+      setCurrentUser({
+        id: response.data.id,
+        email: response.data.email,
+      });
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
-    <div>
-      <input color="neutral" onChange={handleChangeUser}></input>
-      <input
-        type="password"
-        color="neutral"
-        onChange={handleChangePassword}
-      ></input>
+    <div style={{ paddingTop: 200 }}>
+      <input color="neutral" onChange={handleChangeEmail} />
+      <input type="password" color="neutral" onChange={handleChangePassword} />
       <button onClick={handleLogin}>Log in</button>
     </div>
   );

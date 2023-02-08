@@ -7,6 +7,7 @@ const register = async (req, res) => {
     const { email, password } = req.body;
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(password, salt);
+
     const user = await User.create({
       email: email,
       password: hashPassword,
@@ -24,6 +25,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email: email });
   const match = await bcrypt.compare(password, user.password);
+
   if (match) {
     const token = jwt.sign(
       {
@@ -33,6 +35,8 @@ const login = async (req, res) => {
     );
     res.status(200).json({
       message: "successfully logged in",
+      id: user._id,
+      email: user.email,
       token: token,
     });
   } else {
