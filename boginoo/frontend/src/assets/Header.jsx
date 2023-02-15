@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="howwork">ХЭРХЭН АЖИЛЛАДАГ ВЭ?</div>
       {currentUser ? (
         <>
-          <Link to="/history">
+          <Link to="/history/:page/:limit">
             <button className="buttonlogin">Түүх</button>
           </Link>
           <p>{currentUser.email}</p>

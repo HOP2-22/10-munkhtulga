@@ -40,19 +40,25 @@ exports.getDatas = async (request, response) => {
   }
 };
 exports.getHistory = async (request, response) => {
+  const page = Number(request.params.page);
+  const limit = Number(request.params.limit);
   const user = request?.body?.user;
-  console.log(request.body);
+
   if (!user) {
     return response.status(400).send({ message: "Invalid user" });
   }
   try {
-    const data = await Link.find({
-      user: user,
-    });
-    response.status(200).send(data);
+    const posts = await Link.find()
+      .limit(limit)
+      .skip(limit * (page - 1))
+      .exec();
+
+    response.status(200).json({ message: "success", posts });
   } catch (error) {
-    response.status(400).send({ message: error.message });
+    response.status(400).json({ error });
   }
+
+  console.log(request.body);
 };
 
 exports.getData = async (request, response) => {

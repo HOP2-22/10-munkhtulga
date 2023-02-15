@@ -13,9 +13,12 @@ export const History = () => {
   useEffect(() => {
     async function getHistory() {
       try {
-        const response = await axios.post("http://localhost:6900/url/history", {
-          user: currentUser.id,
-        });
+        const response = await axios.post(
+          "http://localhost:6900/url/history/:page/:limit",
+          {
+            user: currentUser.id,
+          }
+        );
         setHistoryList(response.data);
       } catch (error) {
         console.error(error);
